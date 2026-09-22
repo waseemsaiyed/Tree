@@ -22,7 +22,7 @@ jobs:
           node-version: 18
 
       - name: Install Node Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Web Application
         run: npm run build
@@ -30,7 +30,7 @@ jobs:
       - name: Initialize and Sync Capacitor
         run: |
           # Install Capacitor core, CLI, and Android packages if not present
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install @capacitor/core @capacitor/cli @capacitor/android --legacy-peer-deps
           
           # Create capacitor.config.json if not present
           if [ ! -f "capacitor.config.json" ]; then
