@@ -1,0 +1,126 @@
+import { Species } from "./types";
+
+export const DEFAULT_SPECIES: Species[] = [
+  {
+    id: "glow_fern",
+    name: "Glow Fern",
+    type: "flora",
+    description: "A resilient neon-veined fern that retains moisture and heals surrounding soil.",
+    cost: { sunlight: 20, water: 10, nutrients: 5, seeds: 0 },
+    production: { sunlight: 0, water: 0.5, nutrients: 0.2, seeds: 0 },
+    emoji: "🌿",
+    color: "text-emerald-400",
+    bgGradient: "from-emerald-950 to-teal-900",
+    unlockedAtLevel: 1,
+    iconName: "Sprout",
+  },
+  {
+    id: "spore_shroom",
+    name: "Spore Shroom",
+    type: "fungi",
+    description: "Decomposes organic matter to generate rich soil nutrients.",
+    cost: { sunlight: 10, water: 30, nutrients: 0, seeds: 1 },
+    production: { sunlight: 0, water: 0, nutrients: 0.8, seeds: 0.1 },
+    emoji: "🍄",
+    color: "text-rose-400",
+    bgGradient: "from-stone-900 to-rose-950",
+    unlockedAtLevel: 1,
+    iconName: "Sparkles",
+  },
+  {
+    id: "silver_birch",
+    name: "Silver Birch",
+    type: "flora",
+    description: "A slender white-barked tree that filters canopy sunlight efficiently.",
+    cost: { sunlight: 50, water: 40, nutrients: 20, seeds: 2 },
+    production: { sunlight: 1.5, water: 0.2, nutrients: 0, seeds: 0 },
+    emoji: "🌳",
+    color: "text-slate-200",
+    bgGradient: "from-slate-900 to-teal-950",
+    unlockedAtLevel: 2,
+    iconName: "Trees",
+  },
+  {
+    id: "bumblebee_nest",
+    name: "Monarch Hive",
+    type: "fauna",
+    description: "Bumblebees and butterflies that pollinate and multiply seed yields.",
+    cost: { sunlight: 80, water: 50, nutrients: 30, seeds: 5 },
+    production: { sunlight: 0.5, water: 0, nutrients: 0, seeds: 0.5 },
+    emoji: "🦋",
+    color: "text-amber-400",
+    bgGradient: "from-amber-950 to-amber-900",
+    unlockedAtLevel: 2,
+    iconName: "Bug",
+  },
+  {
+    id: "luminescent_cap",
+    name: "Glow Mushrooms",
+    type: "fungi",
+    description: "Bioluminescent caps that glow in the dark, attracting nighttime seed carriers.",
+    cost: { sunlight: 30, water: 60, nutrients: 15, seeds: 4 },
+    production: { sunlight: 0.8, water: 0.2, nutrients: 0.4, seeds: 0.3 },
+    emoji: "✨",
+    color: "text-indigo-400",
+    bgGradient: "from-indigo-950 to-violet-900",
+    unlockedAtLevel: 3,
+    iconName: "FlameKindling",
+  },
+  {
+    id: "red_squirrel",
+    name: "Sly Squirrel",
+    type: "fauna",
+    description: "A playful climber that buries and collects seeds across the ecosystem.",
+    cost: { sunlight: 120, water: 80, nutrients: 50, seeds: 8 },
+    production: { sunlight: 0, water: 0, nutrients: 0.5, seeds: 1.2 },
+    emoji: "🐿️",
+    color: "text-orange-400",
+    bgGradient: "from-orange-950 to-amber-950",
+    unlockedAtLevel: 3,
+    iconName: "PawPrint",
+  },
+  {
+    id: "ancient_oak",
+    name: "Ancient Oak",
+    type: "flora",
+    description: "A mighty pillar of life providing shelter and stable resource storage.",
+    cost: { sunlight: 300, water: 250, nutrients: 150, seeds: 15 },
+    production: { sunlight: 3.5, water: 2.0, nutrients: 1.5, seeds: 0.5 },
+    emoji: "🌲",
+    color: "text-green-300",
+    bgGradient: "from-green-950 to-emerald-950",
+    unlockedAtLevel: 4,
+    iconName: "Trees",
+  },
+  {
+    id: "noble_stag",
+    name: "Elder Stag",
+    type: "fauna",
+    description: "A majestic forest guardian that brings complete balance and high harmony.",
+    cost: { sunlight: 600, water: 500, nutrients: 400, seeds: 30 },
+    production: { sunlight: 5.0, water: 5.0, nutrients: 5.0, seeds: 3.0 },
+    emoji: "🦌",
+    color: "text-yellow-200",
+    bgGradient: "from-amber-950 to-yellow-950",
+    unlockedAtLevel: 5,
+    iconName: "Crown",
+  },
+];
+
+export const RANGER_TITLES = [
+  "Novice Sprouter",
+  "Sapling Guardian",
+  "Forest Whisperer",
+  "Canopy Architect",
+  "Ecosystem Harmonizer",
+  "Elder Druid of the Mother Tree",
+];
+
+export function getTitleByExp(exp: number): string {
+  if (exp < 50) return RANGER_TITLES[0];
+  if (exp < 150) return RANGER_TITLES[1];
+  if (exp < 400) return RANGER_TITLES[2];
+  if (exp < 1000) return RANGER_TITLES[3];
+  if (exp < 2500) return RANGER_TITLES[4];
+  return RANGER_TITLES[5];
+}

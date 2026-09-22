@@ -1,0 +1,6 @@
+{
+  "name": "Mother Tree Forest Ecosystem",
+  "description": "Nurture a living forest ecosystem, collect seeds, manage vital resources, and unlock rare species with guidance from the ancient Mother Tree.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

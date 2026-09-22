@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Floating particle / text animation for tapping */
+  @keyframes float-up {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.8);
+    }
+    15% {
+      opacity: 1;
+      transform: translateY(-10px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-80px) scale(0.9);
+    }
+  }
+
+  /* Forest breeze rustling animation */
+  @keyframes rustle {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  /* Glow pulse for mystical elements like the Mother Tree */
+  @keyframes mystical-pulse {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+      filter: brightness(1);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(52, 211, 153, 0.55);
+      filter: brightness(1.15);
+    }
+  }
+
+  /* Gentle rain drop falling animation */
+  @keyframes raindrop {
+    0% { transform: translateY(-20px); opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(100px); opacity: 0; }
+  }
+
+  /* Mystical Fog drifting back and forth */
+  @keyframes fogdrift {
+    0% { transform: translateX(-8%) translateY(0); opacity: 0.15; }
+    50% { transform: translateX(8%) translateY(-8px); opacity: 0.45; }
+    100% { transform: translateX(-8%) translateY(0); opacity: 0.15; }
+  }
+
+  /* Golden sun beams breathing pulse */
+  @keyframes sunbeams {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.28; transform: scale(1.04); }
+  }
+
+  /* Windy pollen particles drifting horizontally */
+  @keyframes pollen {
+    0% { transform: translateX(-40px) translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.7; }
+    80% { opacity: 0.7; }
+    100% { transform: translateX(380px) translateY(-30px) rotate(180deg); opacity: 0; }
+  }
+
+  .animate-float-up {
+    animation: float-up 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .animate-rustle {
+    animation: rustle 6s ease-in-out infinite;
+  }
+
+  .animate-mystical {
+    animation: mystical-pulse 4s ease-in-out infinite;
+  }
+
+  .animate-raindrop {
+    animation: raindrop 2s linear infinite;
+  }
+
+  .animate-fogdrift {
+    animation: fogdrift 8s ease-in-out infinite;
+  }
+
+  .animate-sunbeams {
+    animation: sunbeams 6s ease-in-out infinite;
+  }
+
+  .animate-pollen {
+    animation: pollen 4s ease-in-out infinite;
+  }
+}
+
+/* Custom scrollbar to keep layout clean */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 211, 153, 0.5);
+}
+
